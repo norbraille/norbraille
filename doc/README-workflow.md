@@ -24,6 +24,8 @@ Although there are a couple of fonts out there that display braille, we didn't m
 
 We hired a programmer, Jan Martin Kvile, to create all the necessary fonts. We have fonts with and without shadows of unraised dots as well as 6- and 8-dot. They are free to use and are available from within the fonts directory in this repository.
 
+In the fonts folder in this repo, you'll find the fonts in both ttf and woff/woff2 format. They are packed in two zip files respectively with a README file that describes them more in detail. In the NorBraille_woff.zip file there is also the style.css file, which is needed to use the fonts in a html file.
+
 ## The workflow
 
 If you want to reproduce the workflow, you'll need the Pandoc utility from [https://pandoc.org](pandoc.org). Additionally you'll need two Perl scripts that we have developed for this task. They are both found in the utils/scripts folder in this repo. You'll also need a template for Pandoc, found in the utils/pandoc_template folder. place it in your HOME directory under .local/share/pandoc/templates folder. Create it if necessary.
