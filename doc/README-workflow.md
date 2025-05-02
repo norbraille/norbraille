@@ -6,7 +6,7 @@ This document describes the workflow for how we in the Norwegian Braille Authori
 
 ## Background
 
-In the Norwegian Braille Authority we have for years written our standards in Microsoft Word. From the Word document we've converted to pdf for publishing on our web page and for black printing on paper. For 6 dot braille on paper, we've used an old program package called CX for Word, which are still used in the nordic countries. The home page is at
+In the Norwegian Braille Authority we have for years written our standards in Microsoft Word. From the Word document we've converted to pdf for publishing on our web site and for black printing on paper. For 6 dot braille on paper, we've used an old program package called CX for Word, which are still used in the nordic countries. The home page is at
 [CX for Word](http://54eb242ea2e18-mjukaverktyg.se.sitebuilder.loopia.com/).
 
 Obviously our standards are full of examples with braille output. To get appealing visually braille in the Word document and pdf, we've used an old font called BLOCK. This font is based on Eurobraille, which means that letters like a-z have common braille symbols, numbers 1-9 is represented by adding dot 6 to the letter a-i and so on. Reading this output on a braille display with a different braille table get odd result.
@@ -22,13 +22,15 @@ Although there are a couple of fonts out there that display braille, we didn't m
 
 ### About the fonts
 
-We hired a programmer, Jan Martin Kvile, to create all the necessary fonts. We have fonts with and without shadows of unraised dots as well as 6- and 8-dot. They are free to use and are available from within the fonts directory in this repository.
+We hired a programmer, Jan Martin Kvile, to create all the necessary fonts. We have fonts with and without shadows of unraised dots as well as 6- and 8-dot. They are free to use and are available from within the fonts directory in our repository at GitHub.
 
-In the fonts folder in this repo, you'll find the fonts in both ttf and woff/woff2 format. They are packed in two zip files respectively with a README file that describes them more in detail. In the NorBraille_woff.zip file there is also the style.css file, which is needed to use the fonts in a html file.
+In the folder you'll find the fonts in both ttf and woff/woff2 format. They are packed in two zip files respectively with a README file that describes them more in detail. In the NorBraille_woff.zip file there is also the style.css file, which is needed to use the fonts in a html file.
 
 ## The workflow
 
-If you want to reproduce the workflow, you'll need the Pandoc utility from [https://pandoc.org](pandoc.org). Additionally you'll need two Perl scripts that we have developed for this task. They are both found in the utils/scripts folder in this repo. You'll also need a template for Pandoc, found in the utils/pandoc_template folder. place it in your HOME directory under .local/share/pandoc/templates folder. Create it if necessary.
+We have used Linux with shell access for the conversion process, and the process is not tested on Windows.
+
+If you want to reproduce the workflow, a critical part you'll need, is the Pandoc utility from [https://pandoc.org](pandoc.org). You also need LibreOffice (based on OpenOffice): [https://www.libreoffice.org/](libreoffice.org). Additionally you'll need two Perl scripts that we have developed for this task. They are both found in the utils/scripts folder in this repo. You'll also need a template for Pandoc, found in the utils/pandoc_template folder. place it in your HOME directory under .local/share/pandoc/templates folder. Create the folder if necessary.
 
 To view the result, you'll need to place the resulting html file on a web server. Put the appropriate fonts in the same directory, e.g. by extracting the file NorBraille_woff.zip from within the fonts directory.
 
@@ -50,3 +52,6 @@ We convert the Word document to odt because the xml code in an odt file is much 
 
 We convert the odt back to a Word document in step 6. This is because there is a bug hitting us in Pandoc when converting from odt to html.
 
+## Wishes for the future
+
+We still don't have a prepared solution for having only one source document that can be easily converted to braille on paper, and at the same time work as source for html and pdf document. Ultimately we want to use Unicode braille and our new fonts in the source document, but we are not sure that braille conversion software like Duxbury and CX for Word support it. We will look deeper into this at a later time.
